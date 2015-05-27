@@ -1,0 +1,55 @@
+// # config: sizes, colors and fonts
+
+// Max width of the slice ( the max background size exceeding the content size )
+$slice-width  : 1400px;
+
+// Max size of the page
+$max        : 1200;
+$max-width   : $max * 1px;
+$page-padding: 30;
+
+// Gutter width for the grid system
+$gutter     : 30px;
+
+// # Colors
+$white          : #fff;
+$grey           : #444;
+
+$red            : #bc2422;
+
+$orange1 : #eb6909;
+$orange  : $orange1;
+$purple1 : #3659b4;
+$purple2 : #3b57a6;
+$black1  : #333;
+$black   : $black1;
+$black2  : #3a3c41;
+$grey1   : #666;
+$grey2   : #81858f;
+$grey3   : #d0d9e3;
+$grey4   : #ddd;
+$grey5   : #f5f4f3;
+
+$outline        : $orange;
+$error          : $red;
+
+// ## Colors variables
+$link-color     : $red;
+
+// # Fonts
+$arial : Arial, sans-serif;
+$raleway : 'Raleway', sans-serif;
+$font : $arial;
+
+// # Fonts weight
+$fw-light : 300;
+$fw-regular : 400;
+$fw-semibold : 500;
+$fw-bold : 700;
+
+// # Viewports
+$vw-thin:   320px;
+$vw-small:  480px;
+$vw-medium: 780px;
+$vw-large:  1024px;
+$vw-huge:   1200px;

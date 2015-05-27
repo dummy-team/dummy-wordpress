@@ -1,0 +1,49 @@
+
+// ## Text
+body {
+  font-family: $raleway; color: $black;
+}
+
+// ### Alignment
+.align-left { text-align: left; }
+.align-center { text-align: center; }
+.align-right { text-align: right; }
+.align-justify { text-align: justify; }
+
+
+// Use class `page` to set the max-width of the website
+.page { @include page; }
+
+// ## Navigation
+.nav { @include nav; }
+
+// Apply max-width on image
+.csc-textpic-imagewrap, //Typo3CMS specific
+img { max-width: 100%; height: auto;}
+
+// Titles & text
+h1 {
+  font-family: $raleway; font-size: 4.5em; font-weight: 700;
+}
+h2 {
+  font-family: $raleway; font-size: 2.8em; font-weight: 700;
+
+  &.border-bottom {
+    border-bottom: solid 1px $grey4;
+  }
+}
+h3 {
+  font-family: $raleway; font-size: 2em; font-weight: 700;
+}
+h4 {
+  font-family: $raleway; font-size: 1.8em; font-weight: 700;
+}
+p {
+  font-family: $raleway; font-size: 1.6em; color: $grey1;
+}
+
+// Quote
+blockquote {
+  border-left: solid 1px $orange1; padding-left: 30px;
+  font-family: $raleway; font-size: 3em; font-weight: 700; color: $orange1;
+}
