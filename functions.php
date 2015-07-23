@@ -67,7 +67,7 @@ class StarterSite extends TimberSite {
 		register_post_type( 'event',
       array(
         'capability_type' => 'post',
-        'label'  => __( 'Événements', 'skin' ),
+        'label'  => __( 'Événements', 'skin-dummy' ),
         'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
         'rewrite' => array( 'slug' => 'agenda' ),
         'public' => true,
@@ -83,7 +83,7 @@ class StarterSite extends TimberSite {
       'event-category',
       'event',
       array(
-          'label' => __( 'Catégories', 'skin' ),
+          'label' => __( 'Catégories', 'skin-dummy' ),
           'public' => true,
           'rewrite' => true,
           'hierarchical' => true,
@@ -95,9 +95,9 @@ class StarterSite extends TimberSite {
 	public function register_menus() {
     //this is where you can register menus
     register_nav_menus( array(
-      'main'     => __('Menu principal', 'entre-cites'),
-      'footer-1' => __('Menu footer principal', 'entre-cites'),
-      'footer-2' => __('Menu footer secondaire', 'entre-cites')
+      'main'     => __('Menu principal', 'skin-dummy'),
+      'footer-1' => __('Menu footer principal', 'skin-dummy'),
+      'footer-2' => __('Menu footer secondaire', 'skin-dummy')
     ) );
   }
 

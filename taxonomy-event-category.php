@@ -41,7 +41,7 @@ $args = array(
     query_posts($args);
 /* make sure you've got query_posts in your .php file */
 
-$context['title'] = __('Agenda', 'entre-cites');
+$context['title'] = __('Agenda', 'skin-dummy');
 $context['currentTaxonomy'] = get_query_var($wp_query->query_vars['taxonomy']);
 $context['eventCategory'] = get_terms( 'event-category' );
 $context['posts'] = Timber::get_posts();
