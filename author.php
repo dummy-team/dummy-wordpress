@@ -17,4 +17,4 @@ if ( isset( $wp_query->query_vars['author'] ) ) {
 	$data['author'] = $author;
 	$data['title'] = 'Author Archives: ' . $author->name();
 }
-Timber::render( array( 'author.twig', 'archive.twig' ), $data );
+Timber::render( array( 'author.twig', 'archive.twig' ), $data, TWIG_CACHE_ENABLE );

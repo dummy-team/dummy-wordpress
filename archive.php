@@ -37,4 +37,4 @@ if ( is_day() ) {
 
 $data['posts'] = Timber::get_posts();
 
-Timber::render( $templates, $data );
+Timber::render( $templates, $data, TWIG_CACHE_ENABLE );

@@ -42,4 +42,4 @@ query_posts($args);
 $context['eventCategory'] = get_terms( 'event-category' );
 $context['posts'] = Timber::get_posts();
 $context['pagination'] = Timber::get_pagination();
-Timber::render('archive-' . get_post_type() . '.twig', $context);
+Timber::render('archive-' . get_post_type() . '.twig', $context, TWIG_CACHE_ENABLE);
