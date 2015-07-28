@@ -13,6 +13,8 @@ if ( ! class_exists( 'Timber' ) ) {
 	return;
 }
 
+require_once('inc/shortcodes/shortcodes.php');
+
 class StarterSite extends TimberSite {
 
 	public function __construct() {
