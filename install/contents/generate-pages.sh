@@ -3,7 +3,7 @@
 # Require : WP-CLI Tools (wp command)
 # Don't forget to change pluginfilepath variable
 # Use in project root folder
-pagesfilepath="your-project-path/wp-content/themes/skin/install/contents/pages.txt"
+pagesfilepath=$(pwd)"/"$(dirname $0)"/pages.txt"
 
 while read line
 do
