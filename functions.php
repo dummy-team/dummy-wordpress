@@ -123,9 +123,9 @@ class StarterSite extends TimberSite {
     $this->home_url = home_url();
     $context['site'] = $this;
     // Header background image
-    $context['header_image'] = get_field('header_image');
-    $context['header_title'] = get_field('header_title');
-    $context['header_subtitle'] = get_field('header_subtitle');
+    // $context['header_image'] = get_field('header_image');
+    // $context['header_title'] = get_field('header_title');
+    // $context['header_subtitle'] = get_field('header_subtitle');
     // Post type
     $context['post_type'] = get_post_type();
 		return $context;
