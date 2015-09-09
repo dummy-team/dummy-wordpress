@@ -30,15 +30,11 @@ class StarterSite extends TimberSite {
     add_action( 'init', array( $this, 'register_post_types' ) );
     add_action( 'init', array( $this, 'register_taxonomies' ) );
     add_action( 'init', array( $this, 'register_menus' ) );
-    add_action( 'init', array( $this, 'add_rss_feed' ) );
+
     add_action( 'wp_enqueue_scripts', array( $this, 'register_scripts' ) );
     add_action( 'admin_init', array( $this, 'add_editor_styles' ) );
 		parent::__construct();
 	}
-
-	public function add_rss_feed () {
-    add_feed('mobile-events', function(){ get_template_part( 'rss', 'mobile-events' ); } );
-  }
 
 	public function add_mce_buttons_2 ( $buttons ) {
     array_unshift( $buttons, 'styleselect' );
@@ -47,14 +43,7 @@ class StarterSite extends TimberSite {
 
   public function tiny_mce_before_init ( $settings ) {
     $style_formats = array(
-      array( 'title' => 'Orange', 'selector' => 'h2', 'classes' => 'orange' ),
-      array( 'title' => 'Blanc', 'selector' => 'h2,p,h4', 'classes' => 'white' ),
-      array( 'title' => 'Bleu', 'selector' => 'h3', 'classes' => 'blue' ),
-      array( 'title' => 'Avec bordure', 'selector' => 'h2', 'classes' => 'border-bottom' ),
-      array( 'title' => 'Bouton bordure orange', 'selector' => 'a', 'classes' => 'button-orange-bordered' ),
-      array( 'title' => 'Bouton bordure bleue', 'selector' => 'a', 'classes' => 'button-purple-bordered' ),
-      array( 'title' => 'Bouton fond orange', 'selector' => 'a', 'classes' => 'button-orange-background' ),
-      array( 'title' => 'Bouton fond bleu', 'selector' => 'a', 'classes' => 'button-purple-background' )
+      array( 'title' => 'Orange', 'selector' => 'h2, p', 'classes' => 'orange' )
     );
     $settings['style_formats'] = json_encode( $style_formats );
     return $settings;
@@ -66,40 +55,17 @@ class StarterSite extends TimberSite {
 
 	public function register_post_types() {
 		//this is where you can register custom post types
-		register_post_type( 'event',
-      array(
-        'capability_type' => 'post',
-        'label'  => __( 'Événements', 'skin-dummy' ),
-        'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
-        'rewrite' => array( 'slug' => 'agenda' ),
-        'public' => true,
-        'has_archive' => true,
-        'with_front' => true
-      )
-    );
 	}
 
 	public function register_taxonomies() {
 		//this is where you can register custom taxonomies
-		register_taxonomy(
-      'event-category',
-      'event',
-      array(
-          'label' => __( 'Catégories', 'skin-dummy' ),
-          'public' => true,
-          'rewrite' => true,
-          'hierarchical' => true,
-          'show_ui' => true
-      )
-    );
 	}
 
 	public function register_menus() {
     //this is where you can register menus
     register_nav_menus( array(
       'main'     => __('Menu principal', 'skin-dummy'),
-      'footer-1' => __('Menu footer principal', 'skin-dummy'),
-      'footer-2' => __('Menu footer secondaire', 'skin-dummy')
+      'footer' => __('Menu footer', 'skin-dummy')
     ) );
   }
 
@@ -110,22 +76,15 @@ class StarterSite extends TimberSite {
   }
 
 	public function add_to_context( $context ) {
-		$context['foo'] = 'bar';
-		$context['stuff'] = 'I am a value set in your functions.php file';
-		$context['notes'] = 'These values are available everytime you call Timber::get_context();';
 		// Menu
     $context['menu'] = new stdClass();
     $context['menu']->main = new TimberMenu('main');
-    $context['menu']->footer_1 = new TimberMenu('footer-1');
-    $context['menu']->footer_2 = new TimberMenu('footer-2');
-    $context['menu']->services = new TimberMenu('services');
+    $context['footer']->main = new TimberMenu('footer');
+
     // Home url
     $this->home_url = home_url();
     $context['site'] = $this;
-    // Header background image
-    // $context['header_image'] = get_field('header_image');
-    // $context['header_title'] = get_field('header_title');
-    // $context['header_subtitle'] = get_field('header_subtitle');
+
     // Post type
     $context['post_type'] = get_post_type();
 		return $context;
@@ -133,8 +92,6 @@ class StarterSite extends TimberSite {
 
 	public function add_to_twig( $twig ) {
 		/* this is where you can add your own fuctions to twig */
-		// $twig->addExtension( new Twig_Extension_StringLoader() );
-		// $twig->addFilter( 'myfoo', new Twig_Filter_Function( 'myfoo' ) );
 		return $twig;
 	}
 
