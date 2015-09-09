@@ -79,7 +79,7 @@ class StarterSite extends TimberSite {
 		// Menu
     $context['menu'] = new stdClass();
     $context['menu']->main = new TimberMenu('main');
-    $context['footer']->main = new TimberMenu('footer');
+    $context['footer']->footer = new TimberMenu('footer');
 
     // Home url
     $this->home_url = home_url();
