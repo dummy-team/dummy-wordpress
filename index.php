@@ -19,9 +19,7 @@ if ( ! class_exists( 'Timber' ) ) {
 }
 $context = Timber::get_context();
 $context['posts'] = Timber::get_posts();
-$context['foo'] = 'bar';
-$templates = array( 'index.twig' );
-if ( is_home() ) {
-	array_unshift( $templates, 'home.twig' );
-}
-Timber::render( $templates, $context, TWIG_CACHE_ENABLE );
+
+$template = is_home()  ? 'Templates/home.twig' : 'Templates/index.twig';
+
+Timber::render( $template, $context, TWIG_CACHE_ENABLE );

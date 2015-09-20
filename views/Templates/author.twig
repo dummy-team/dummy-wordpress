@@ -1,0 +1,9 @@
+{# author.php #}
+
+{% extends "base.twig" %}
+
+{% block content %}
+	{% for post in posts %}
+		{% include ["Partials/Article/List/"~post.post_type~".twig", "Partials/Article/List/post.twig"] %}
+	{% endfor %}
+{% endblock %}
