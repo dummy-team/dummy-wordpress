@@ -7,4 +7,4 @@
  * @subpackage  Timber
  */
 
-Timber::render( array( 'sidebar.twig' ), $data, TWIG_CACHE_ENABLE );
+Timber::render( array( 'Templates/sidebar.twig' ), $data, TWIG_CACHE_ENABLE );

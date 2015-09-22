@@ -9,5 +9,5 @@ if ( ! isset( $timberContext ) ) {
 }
 $timberContext['content'] = ob_get_contents();
 ob_end_clean();
-$templates = array( 'page-plugin.twig' );
-Timber::render( $templates, $timberContext, TWIG_CACHE_ENABLE );
+
+Timber::render( 'Templates/page-plugin.twig' , $timberContext, TWIG_CACHE_ENABLE );
