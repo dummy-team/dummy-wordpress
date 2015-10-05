@@ -1,0 +1,17 @@
+--><div class="post-item">
+  {{thumbnail}}
+  <a href="{{permalink}}">
+    <img src="/wp-content/themes/skin/web/img/plus.png" class="plus" />
+    <div class="post-item-background {{class_categories_slug}}">
+      <div class="post-item-content">
+        <hr />
+        <p class="post-category">
+          {% for category in categories %}
+            {{category.name}}
+          {% endfor %}
+        </p>
+        <p class="h3-like post-title">{{title}}</p>
+      </div>
+    </div>
+  </a>
+</div><!--
