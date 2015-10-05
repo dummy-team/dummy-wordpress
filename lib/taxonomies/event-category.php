@@ -6,7 +6,7 @@ function register_taxonomy_event_category() {
         'event-category',
         'event',
         array(
-            'label' => __( 'Catégories événement', 'skin-dummy' ),
+            'label' => __( 'Catégories événement', 'skin' ),
             'public' => true,
             'rewrite' => true,
             'hierarchical' => true,

@@ -58,5 +58,4 @@ function in_news_int ( $atts, $content = null ) {
 
 add_shortcode('in_news_int', 'in_news_int');
 
-
 ?>
