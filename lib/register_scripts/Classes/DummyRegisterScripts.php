@@ -1,9 +1,15 @@
 <?php
-  /**
-   **
-   **/
-  class DummyRegisterScripts
-  {
+/**
+ **
+ **/
+class DummyRegisterScripts {
+    /***
+    **** string $id 
+    **** string $path 
+    **** array $deps 
+    **** string $version 
+    **** bool $inFooter 
+    ****/
     public function __construct( $id, $path = NULL, $deps = array(), $version = '0.0.0', $inFooter = true ) {
         $this->id = $id;
         $this->path = $path;
@@ -15,7 +21,6 @@
     }
 
     public function register_scripts() {
-      wp_enqueue_script( $this->id, $this->path, $this->deps, $this->version, $this->inFooter );
+        wp_enqueue_script( $this->id, $this->path, $this->deps, $this->version, $this->inFooter );
     }
-  }
-?>
+}

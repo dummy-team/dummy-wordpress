@@ -2,36 +2,23 @@
 /**
  **
  **/
-class DummyImagesSizes
-{
-  /***
-  **** $name 
-  **** int $width
-  **** int $height
-  **** bool|array $crop = false 
-  ****/
-  public function __construct( $name, $width, $height, $crop ) {
-      $this->name = $name;
-      $this->width = $width;
-      $this->height = $height;
-      $this->crop = $crop;
+class DummyImagesSizes {
+    /***
+    **** string $name 
+    **** int $width
+    **** int $height
+    **** bool|array $crop = false 
+    ****/
+    public function __construct( $name, $width, $height, $crop ) {
+        $this->name = $name;
+        $this->width = $width;
+        $this->height = $height;
+        $this->crop = $crop;
 
-      $this->init();
-  }
+        $this->addImageSize();
+    }
 
-  public function init() {
-    $this->addThemeSupport();
-    $this->addImageSize();
-  }
-
-  public function addThemeSupport() {
-      add_theme_support( $this->name );
-  }
-
-  public function addImageSize( ) {
-      add_image_size( $this->name, $this->width, $this->height, $this->crop );
-  }
+    public function addImageSize() {
+        add_image_size( $this->name, $this->width, $this->height, $this->crop );
+    }
 }
-?>
-
-

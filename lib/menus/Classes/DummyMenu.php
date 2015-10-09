@@ -1,9 +1,12 @@
 <?php
-  /**
-   **
-   **/
-  class DummyMenu
-  {
+/**
+ **
+ **/
+class DummyMenu {
+    /***
+    **** string $id 
+    **** string $description 
+    ****/
     public function __construct( $id, $description ) {
         $this->id = $id;
         $this->description = $description;
@@ -20,5 +23,4 @@
         $context['menu'][$this->id] = new TimberMenu($this->id);
         return $context;
     }
-  }
-?>
+}
