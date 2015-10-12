@@ -1,14 +1,29 @@
 <?php
 /**
- **
+ ** Register taxonomy
  **/
-class DummyTaxonomy {
-    /***
-    **** string $id 
-    **** string $ref 
-    **** array $config 
-    ****/
-    public function __construct( $id, $ref, $config ) {
+class DummyTaxonomy
+{
+    /**
+     * @var string
+     */
+    protected $id;
+
+    /**
+     * @var string
+     */
+    protected $ref;
+
+    /**
+     * @var array
+     */
+    protected $config;
+
+    /**
+     * Constructs this post
+     */
+    public function __construct( $id, $ref, $config )
+    {
         $this->id = $id;
         $this->ref = $ref;
         $this->config = $config;
@@ -16,7 +31,11 @@ class DummyTaxonomy {
         add_action( 'init', array($this, 'registerTaxonomy') );
     }
     
-    public function registerTaxonomy() {
+    /**
+     * Register taxonomy
+     */
+    public function registerTaxonomy()
+    {
         register_taxonomy( $this->id, $this->ref, $this->config );
     }
 }

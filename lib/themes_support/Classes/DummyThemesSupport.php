@@ -1,20 +1,36 @@
 <?php
 /**
- **
+ ** Add themes support
  **/
-class DummyThemesSupport {
-    /***
-    **** string $id 
-    **** array $config 
-    ****/
-    public function __construct( $id, $config = array() ) {
+class DummyThemesSupport
+{
+
+    /**
+     * @var string
+     */
+    protected $id;
+
+    /**
+     * @var array
+     */
+    protected $config;
+
+    /**
+     * Constructs this post
+     */
+    public function __construct( $id, $config = array() )
+    {
         $this->id = $id;
         $this->config = $config;
 
         $this->themesSupport();
     }
     
-    public function themesSupport() {
+    /**
+     * Add theme support
+     */
+    public function themesSupport()
+    {
         add_theme_support( $this->id, $this->config; );
     }
 }
