@@ -31,6 +31,6 @@ class DummyThemesSupport
      */
     public function themesSupport()
     {
-        add_theme_support( $this->id, $this->config; );
+        add_theme_support( $this->id, $this->config );
     }
 }

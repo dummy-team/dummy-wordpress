@@ -35,7 +35,7 @@ class DummyRegisterScripts
      */
     public function __construct( $id, $path = NULL, $deps = array(), $version = '0.0.0', $inFooter = true )
     {
-        $this->id = $id
+        $this->id = $id;
         $this->path = $path;
         $this->deps = $deps;
         $this->version = $version;
