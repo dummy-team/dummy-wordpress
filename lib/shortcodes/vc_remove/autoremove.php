@@ -1,6 +1,6 @@
 <?php
 $elemets = array(
-  	"vc_facebook",
+    "vc_facebook",
     "vc_tweetmeme",
     "vc_googleplus",
     "vc_pinterest",
