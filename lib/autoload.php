@@ -23,8 +23,8 @@ require_once('taxonomies/autoload.php');
 /* Include Timber */
 require_once('timber/autoload.php');
 
+/* Include Themes Support */
+require_once('themes_support/autoload.php');
+
 /* Include Tiny Mce */
 require_once('tiny_mce/autoload.php');
-
-/* Je sais pas quoi en foutre pour le moment */
-//add_theme_support( 'post-formats' );

@@ -17,6 +17,9 @@ function before_init ( $settings ) {
     );
 
     $settings['style_formats'] = json_encode( $style_formats );
+    
+    $settings['remove_script_host'] = true;
+    $settings['convert_urls'] = true;
 
     return $settings;
 }

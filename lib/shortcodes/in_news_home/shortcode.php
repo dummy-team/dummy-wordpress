@@ -5,9 +5,9 @@
  */
 function in_news_int ( $atts, $content = null ) {
     extract(shortcode_atts(array(
-      'title' => '',
-      'subtitle' => '',
-      'link' => '/'
+        'title' => '',
+        'subtitle' => '',
+        'link' => '/'
     ), $atts));
 
     $limit_show_news = 100;
@@ -57,5 +57,3 @@ function in_news_int ( $atts, $content = null ) {
 }
 
 add_shortcode('in_news_int', 'in_news_int');
-
-?>
