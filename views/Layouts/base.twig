@@ -3,7 +3,6 @@
 {% endblock %}
 
 	<body class="{{body_class}}" data-template="base.twig" id="body">
-		{% include 'Partials/Components/_cookie-box.twig' %}
 
 		{% block header %}
 			{% include 'Partials/Layout/_header.twig' %}
@@ -26,6 +25,7 @@
 
 			{% include 'Partials/Components/_analytics.twig' %}
 		{% endblock %}
-
+    
+    {% include 'Partials/Components/_cookie-box.twig' %}
 	</body>
 </html>

@@ -10,5 +10,5 @@ new DummyRegisterStyles(
 new DummyRegisterScripts(
 	'skin_main_js',
 	get_stylesheet_directory_uri().'/web/js/main.js',
-	array('jquery')
+	array('jquery', 'js_cookie')
 );
