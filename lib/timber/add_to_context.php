@@ -1,8 +1,6 @@
 <?php
 
-add_filter( 'timber_context', 'add_to_context' );
-
-function add_to_context( $context ) {
+add_filter( 'timber_context', function( $context ) {
     // Post type
     $context['post_type'] = get_post_type();
 
@@ -22,7 +20,10 @@ function add_to_context( $context ) {
     //$context['link_all_news'] = get_page_link(76);
     //$context['showNewsAllLink'] = false;
 
-    $context['housing_url'] = get_permalink(46);
+    // Menu
+    $context['menu'] = new stdClass();
+    $context['menu']->main = new TimberMenu('main');
+    $context['menu']->footer = new TimberMenu('footer');
 
     return $context;
-}
+} );

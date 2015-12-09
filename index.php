@@ -23,3 +23,4 @@ $context['posts'] = Timber::get_posts();
 $template = is_home()  ? 'Templates/home.twig' : 'Templates/index.twig';
 
 Timber::render( $template, $context, TWIG_CACHE_ENABLE );
+
