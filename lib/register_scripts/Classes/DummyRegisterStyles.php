@@ -33,7 +33,7 @@ class DummyRegisterStyles
     /**
      * Constructs this post
      */
-    public function __construct( $id, $path = NULL, $deps = array(), $version = '0.0.0', $inFooter = true )
+    public function __construct( $id, $path = NULL, $deps = array(), $version = false, $inFooter = false )
     {
         $this->id = $id;
         $this->path = $path;
@@ -41,7 +41,7 @@ class DummyRegisterStyles
         $this->version = $version;
         $this->inFooter = $inFooter;
 
-        add_action( 'wp_enqueue_style', array($this, 'register_styles') );
+        add_action( 'wp_enqueue_scripts', array($this, 'register_styles') );
     }
 
     /**
@@ -49,6 +49,7 @@ class DummyRegisterStyles
      */
     public function register_styles()
     {
-        wp_enqueue_script( $this->id, $this->path, $this->deps, $this->version, $this->inFooter );
+        wp_register_style($this->id, $this->path, $this->deps, $this->version, $this->inFooter);
+        wp_enqueue_style($this->id);
     }
 }
