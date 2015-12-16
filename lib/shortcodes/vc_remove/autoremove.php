@@ -1,5 +1,5 @@
 <?php
-$elemets = array(
+$elements = array(
     "vc_facebook",
     "vc_tweetmeme",
     "vc_googleplus",
@@ -43,6 +43,6 @@ $elemets = array(
     //"vc_gallery",
 );
 
-foreach ($elemets as $elemet){
+foreach ($elements as $element){
     vc_remove_element($element);
 }
