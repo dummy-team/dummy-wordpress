@@ -13,12 +13,9 @@ add_filter( 'timber_context', function( $context ) {
 
     // breadCrump
     if(function_exists('yoast_breadcrumb')){
-        $context['breadCrumbs'] = yoast_breadcrumb('<p>','</p>', false );
+        $context['breadcrumb'] = yoast_breadcrumb('<p>','</p>', false );
     }
-    $context['showBreadCrumbs'] = true;
-
-    //$context['link_all_news'] = get_page_link(76);
-    //$context['showNewsAllLink'] = false;
+    $context['display_breadcrumb'] = true;
 
     // Menu
     $context['menu'] = new stdClass();

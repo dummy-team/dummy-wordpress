@@ -66,3 +66,53 @@ To fully use the wp-dummy-twig some recipes are available in the [wiki](wiki) an
 
 # Keep in touch
 If you find any caveats using it or have suggestions to improve the tool we gladly accept [Pull Requests](https://github.com/dummy-team/wp-dummy-twig/tree/master/CONTRIBUTING.md#submitting-a-pull-request) and [issues](https://github.com/dummy-team/wp-dummy-twig/issues).
+
+
+# Coding Standards
+## PHP
+
+PHP Coding Standards is based on Wordpress PHP Coding Standards (see : https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/), example below
+
+my-example.php
+class My_Example {
+  protected $my_example_variable = 'Example variable';
+
+  public function __construct() {
+    
+  }
+
+  public function my_example_function( $my_example_variable ) {
+    if( true === $my_example_variable ) {
+      return 'Example';
+    }
+    else {
+      $this->my_example_function( $parameter );
+    }
+  }
+}
+
+## CSS
+
+Never use camelCase while naming file or css class
+Prefix name by function, example below
+
+_block-editorial.scss
+.block-editorial { ... }
+
+_nav-footer.scss
+.nav-footer { ... }
+
+## TWIG
+
+Never use camelCase while naming file
+Use _ character to separate words for names of variables
+Use - character to separate words for filenames
+Example : display_breadcrumb variable name is correct, displayBreadcrumb is incorrect
+
+Use a lot of blocks as possible
+{% block header %} {% endblock %}
+{% block footer %} {% endblock %}
+{% block ipsum %} {% endblock %}
+{% block ... %} {% endblock %}
+
+

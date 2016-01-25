@@ -1,4 +1,9 @@
 <?php
+if( ! defined( 'ABSPATH' ) ) exit;
+
+/* Include Theme setup */
+require_once('theme_setup/autoload.php');
+
 /* Include Menus */
 require_once('images_sizes/autoload.php');
 
@@ -24,7 +29,7 @@ require_once('taxonomies/autoload.php');
 require_once('timber/autoload.php');
 
 /* Include Themes Support */
-require_once('themes_support/autoload.php');
+require_once('theme_support/autoload.php');
 
 /* Include Tiny Mce */
 require_once('tiny_mce/autoload.php');
