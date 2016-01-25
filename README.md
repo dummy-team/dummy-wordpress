@@ -95,6 +95,7 @@ class My_Example {
 ## CSS
 
 Never use camelCase while naming file or css class
+
 Prefix name by function, example below
 ``` css
 _block-editorial.scss
@@ -107,8 +108,11 @@ _nav-footer.scss
 ## TWIG
 
 Never use camelCase while naming file
+
 Use _ character to separate words for names of variables
+
 Use - character to separate words for filenames
+
 Example : display_breadcrumb variable name is correct, displayBreadcrumb is incorrect
 
 Use a lot of blocks as possible
