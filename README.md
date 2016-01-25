@@ -72,8 +72,8 @@ If you find any caveats using it or have suggestions to improve the tool we glad
 ## PHP
 
 PHP Coding Standards is based on Wordpress PHP Coding Standards (see : https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/), example below
-
-my-example.php
+``` php
+#my-example.php
 class My_Example {
   protected $my_example_variable = 'Example variable';
 
@@ -90,17 +90,19 @@ class My_Example {
     }
   }
 }
+```
 
 ## CSS
 
 Never use camelCase while naming file or css class
 Prefix name by function, example below
-
+``` css
 _block-editorial.scss
 .block-editorial { ... }
 
 _nav-footer.scss
 .nav-footer { ... }
+```
 
 ## TWIG
 
@@ -110,9 +112,10 @@ Use - character to separate words for filenames
 Example : display_breadcrumb variable name is correct, displayBreadcrumb is incorrect
 
 Use a lot of blocks as possible
+```
 {% block header %} {% endblock %}
 {% block footer %} {% endblock %}
 {% block ipsum %} {% endblock %}
 {% block ... %} {% endblock %}
-
+```
 
