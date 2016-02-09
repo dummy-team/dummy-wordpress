@@ -33,3 +33,6 @@ require_once('theme_support/autoload.php');
 
 /* Include Tiny Mce */
 require_once('tiny_mce/autoload.php');
+
+/* Include custom functions */
+require_once('functions/autoload.php');
