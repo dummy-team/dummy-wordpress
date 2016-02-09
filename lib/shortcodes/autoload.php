@@ -5,7 +5,7 @@ if (function_exists('vc_remove_element')) {
     add_action('init', function() {
         // Include here your shortcodes
 	// require_once('my_shortcode/autoload.php');
-    }
+    });
 } else {
     add_action( 'admin_notices', function()
     {
