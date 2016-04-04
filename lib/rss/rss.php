@@ -1,7 +1,5 @@
 <?php
 
-add_action( 'init', 'add_rss_feed' );
+add_action( 'init', function() {
 
-function add_rss_feed() {
-
-}
+});

@@ -1,7 +1,5 @@
 <?php
-add_filter( 'before_init', 'before_init' );
-
-function before_init ( $settings ) {
+add_filter('before_init', function( $settings ) {
     $style_formats = array(
         /* Paragraphe */
         array( 'title' => 'Chapeau', 'selector' => 'p', 'classes' => 'paragraphe-class' ),
@@ -17,9 +15,9 @@ function before_init ( $settings ) {
     );
 
     $settings['style_formats'] = json_encode( $style_formats );
-    
+
     $settings['remove_script_host'] = true;
     $settings['convert_urls'] = true;
 
     return $settings;
-}
+} );

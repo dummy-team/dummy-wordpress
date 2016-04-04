@@ -1,3 +1,2 @@
 <?php
-require_once('Classes/DummyMenu.php');
-new DummyMenu('main', __('Menu principal', 'skin'));
+register_nav_menu('main', __('Menu principal', 'skin'));

@@ -1,4 +1,5 @@
 <?php
+if( ! defined( 'ABSPATH' ) ) exit;
 /**
  * The main template file
  * This is the most generic template file in a WordPress theme
@@ -23,3 +24,4 @@ $context['posts'] = Timber::get_posts();
 $template = is_home()  ? 'Templates/home.twig' : 'Templates/index.twig';
 
 Timber::render( $template, $context, TWIG_CACHE_ENABLE );
+
