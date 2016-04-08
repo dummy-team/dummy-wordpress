@@ -1,11 +1,11 @@
 {% extends 'Layouts/base.twig' %}
 
 {% block content %}
-  <article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-    <section class="article-content">
-      <div class="article-body">
-        {{post.content}}
-      </div>
-    </section>
-  </article>
+  <h2>{{__('Recherche', 'dummy-wordpress')}}</h2>
+
+  {{function('get_search_form')}}
+
+  {% for post in posts %}
+    {% include ['Partials/Article/List/_post.twig', 'Partials/List/_post.twig'] %}
+  {% endfor %}
 {% endblock %}
