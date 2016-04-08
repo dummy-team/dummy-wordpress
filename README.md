@@ -1,5 +1,5 @@
-# wp-dummy-twig
-wp-dummy-twig is a starter theme designed to help you build Wordpress websites in a sane environment. It's main purpose is to provide a solid template system to keep the html away from the PHP, while keeping your sanity healty dealing with the `function.php`.
+# Dummy Wordpress
+Dummy Wordpress is a starter theme designed to help you build Wordpress websites in a sane environment. It's main purpose is to provide a solid template system to keep the html away from the PHP, while keeping your sanity healty dealing with the `function.php`.
 
 It is based on [Timber](https://github.com/jarednova/timber) powered by the [Twig Template Engine](http://twig.sensiolabs.org/).
 
@@ -7,7 +7,7 @@ It is based on [Timber](https://github.com/jarednova/timber) powered by the [Twi
 
 # Features
 ## Wordpress configuration
-To prevent the creation of a big messy `function.php`, wp-dummy-twig is packed with helper classes and a well [structured php](https://github.com/dummy-team/wp-dummy-twig/tree/master/lib).
+To prevent the creation of a big messy `function.php`, Dummy Wordpress is packed with helper classes and a well [structured php](https://github.com/dummy-team/wp-dummy-twig/tree/master/lib).
 
 ## Back-end editing
 We like to provide the website contributors a rich layout system with a fully editable front-end, to do so we use [Visual composer](http://vc.wpbakery.com/). [Reusable components](dummy-team/wp-components) (*shortcodes*) will be available soon.
@@ -21,7 +21,7 @@ To manage styles and scripts you can use any css frameworks you like. They will 
 # Install
 ## Requirements
 First you'll need to [install Wordpress](http://codex.wordpress.org/Installing_WordPress) then get the [Timber plugin](https://github.com/jarednova/timber#installation).
-While it isn't required, the [Visual composer plugin](http://vc.wpbakery.com/) works very well with wp-dummy-twig.
+While it isn't required, the [Visual composer plugin](http://vc.wpbakery.com/) works very well with Dummy Wordpress.
 
 ## Get it from github
 To install this starter theme download [sources](https://github.com/dummy-team/wp-dummy-twig/archive/master.tar.gz) from github and extract it in your worpdress theme folder, then activate it.
@@ -62,7 +62,7 @@ module.exports =
 ```
 
 
-To fully use the wp-dummy-twig some recipes are available in the [wiki](wiki) and in [Timber documentation](https://github.com/jarednova/timber/wiki)
+To fully use the Dummy Wordpress some recipes are available in the [wiki](wiki) and in [Timber documentation](https://github.com/jarednova/timber/wiki)
 
 # Keep in touch
 If you find any caveats using it or have suggestions to improve the tool we gladly accept [Pull Requests](https://github.com/dummy-team/wp-dummy-twig/tree/master/CONTRIBUTING.md#submitting-a-pull-request) and [issues](https://github.com/dummy-team/wp-dummy-twig/issues).
