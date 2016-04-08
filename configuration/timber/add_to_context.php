@@ -5,11 +5,11 @@ add_filter( 'timber_context', function( $context ) {
     $context['post_type'] = get_post_type();
 
     // Media path
-    $context['path_skin'] = get_template_directory_uri();
-    $context['path_css'] = $context['path_skin'].'/web/css/';
-    $context['path_fonts'] = $context['path_skin'].'/web/fonts/';
-    $context['path_img'] = $context['path_skin'].'/web/img/';
-    $context['path_js'] = $context['path_skin'].'/web/js/';
+    $context['path_theme'] = get_template_directory_uri();
+    $context['path_css'] = $context['path_theme'].'/web/css/';
+    $context['path_fonts'] = $context['path_theme'].'/web/fonts/';
+    $context['path_img'] = $context['path_theme'].'/web/img/';
+    $context['path_js'] = $context['path_theme'].'/web/js/';
 
     // breadCrump
     if(function_exists('yoast_breadcrumb')){

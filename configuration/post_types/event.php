@@ -4,7 +4,7 @@
  **/
 register_post_type('event', array(
     'capability_type' => 'post',
-    'label'  => __( 'Événements', 'skin' ),
+    'label'  => __( 'Événements', 'dummy-wordpress' ),
     'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
     'rewrite' => array( 'slug' => 'agenda' ),
     'public' => true,

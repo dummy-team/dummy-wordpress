@@ -19,9 +19,6 @@ require_once('register_scripts/autoload.php');
 /* Include Rss */
 //require_once('rss/autoload.php');
 
-/* Include Shortcodes */
-require_once('shortcodes/autoload.php');
-
 /* Include Taxonomies */
 require_once('taxonomies/autoload.php');
 

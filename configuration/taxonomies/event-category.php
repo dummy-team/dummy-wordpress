@@ -1,6 +1,6 @@
 <?php
 register_taxonomy('event-category', 'event', array(
-    'label' => __( 'Catégories événement', 'skin' ),
+    'label' => __( 'Catégories événement', 'dummy-wordpress' ),
     'public' => true,
     'rewrite' => true,
     'hierarchical' => true,
