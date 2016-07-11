@@ -4,7 +4,7 @@
  **/
 
 // Send admin notices if Timber isn't installed
-if( !is_plugin_active('timber-library/timber.php') ) {
+if( !class_exists('Timber') ) {
     add_action( 'admin_notices', function(){
         $class = 'notice notice-error';
         $message = __( "L'extension Timber doit être installé pour pouvoir utiliser ce thème.", 'dummy-wordpress' );
