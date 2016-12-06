@@ -1,7 +1,5 @@
 <?php
-add_filter( 'add_buttons', 'add_buttons' );
-
-function add_buttons ( $buttons ) {
+add_filter( 'mce_buttons_2', function($buttons) {
     array_unshift( $buttons, 'styleselect' );
     return $buttons;
-}
+});
