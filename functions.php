@@ -44,9 +44,11 @@ class StarterSite extends TimberSite {
         add_action('init', array($this, 'register_post_types'));
         add_action('init', array($this, 'register_taxonomies'));
         add_action('init', array($this, 'register_menus'));
-        add_action('init', array($this, 'register_shortcodes'));
         add_action('init', array($this, 'register_widgets'));
         add_action('init', array($this, 'add_image_size'));
+
+        $this->register_shortcodes();
+
         parent::__construct();
     }
 
