@@ -25,20 +25,26 @@ class StarterSite extends TimberSite {
         add_filter('wp_mail_from', 'noreply@domain.com');
         add_filter('wp_mail_from_name', 'Administrateur');
 
+        if (function_exists('vc_remove_element')) {
+            add_filter('admin_init', array($this, 'vc_remove_shortcodes_from_vc_grid_element'));
+        }
 
+        add_action( 'admin_init', function() {
+            add_editor_style( './lib/custom-editor-style.css' );
+        });
+
+        add_action('vc_before_init', array($this, 'vc_register_shortcodes'));
         add_action('tiny_mce_before_init', array($this, 'config_tiny_mce'));
         add_filter( 'mce_buttons', function($buttons) {
             array_unshift( $buttons, 'styleselect' );
             return $buttons;
         });
 
-        add_action( 'admin_init', function() {
-            add_editor_style( './lib/custom-editor-style.css' );
-        });
 
         add_action('init', array($this, 'register_post_types'));
         add_action('init', array($this, 'register_taxonomies'));
         add_action('init', array($this, 'register_menus'));
+        add_action('init', array($this, 'register_shortcodes'));
         add_action('init', array($this, 'register_widgets'));
         add_action('init', array($this, 'add_image_size'));
         parent::__construct();
@@ -61,6 +67,13 @@ class StarterSite extends TimberSite {
 
     function register_menus(){
         require('lib/menus.php');
+    }
+
+    function register_shortcodes( ) {
+        require('lib/register_shortcodes.php');
+    }
+    function vc_register_shortcodes( ) {
+        require('lib/vc_register_shortcodes.php');
     }
 
     function register_widgets(){
@@ -111,6 +124,11 @@ class StarterSite extends TimberSite {
         $twig->addExtension(new Twig_Extension_StringLoader());
         $twig->addFilter('myfoo', new Twig_Filter_Function('myfoo'));
         return $twig;
+    }
+
+    // Removes Visual Composer's shortcodes
+    function vc_remove_shortcodes_from_vc_grid_element( ) {
+        require('lib/vc_remove_shortcodes.php');
     }
 
 }
