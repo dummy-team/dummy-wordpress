@@ -1,32 +1,5 @@
 {
-    "name": "dummy-team/wp-dummy-twig",
-    "description": "Light Wordpress Theme based on twig template engine",
-    "type": "wordpress-theme",
     "require": {
-        "composer/installers": "^1.0"
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Grégory Copin",
-            "email": "gregcop1@gmail.com"
-        },
-	{
-	    "name": "Clément Plou",
-	    "email": "cl.plou@gmail.com"
-	},
-	{
-	    "name": "Jérémy Viste",
-	    "email": "FeetloveR666@gmail.com" 
-	},
-	{
-	    "name": "Yann Prou",
-	    "email": "prouyann@gmail.com"
-	},
-	{
-	    "name": "Sullivan Atatri",
-	    "email": "contact@shatimes.fr"
-	}
-    ]
+        "timber/timber": "^1.2"
+    }
 }
-

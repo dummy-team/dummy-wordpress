@@ -1,5 +1,4 @@
 <?php
-if( ! defined( 'ABSPATH' ) ) exit;
 /**
  * The main template file
  * This is the most generic template file in a WordPress theme
@@ -19,9 +18,14 @@ if ( ! class_exists( 'Timber' ) ) {
 	return;
 }
 $context = Timber::get_context();
+
+// We can access the loop of WordPress posts with the 'posts' variable.
 $context['posts'] = Timber::get_posts();
 
-$template = is_home()  ? 'Templates/home.twig' : 'Templates/index.twig';
 
-Timber::render( $template, $context, TWIG_CACHE_ENABLE );
-
+// If we are on the home page, add a few other templates to our hierarchy.
+$templates = array( 'index.twig' );
+if ( is_home() ) {
+	array_unshift( $templates, 'front-page.twig', 'home.twig' );
+}
+Timber::render( $templates, $context );

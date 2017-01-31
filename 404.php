@@ -1,5 +1,4 @@
 <?php
-if( ! defined( 'ABSPATH' ) ) exit;
 /**
  * The template for displaying 404 pages (Not Found)
  *
@@ -11,4 +10,4 @@ if( ! defined( 'ABSPATH' ) ) exit;
  */
 
 $context = Timber::get_context();
-Timber::render( 'Templates/404.twig', $context, TWIG_CACHE_ENABLE );
+Timber::render( '404.twig', $context );

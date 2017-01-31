@@ -1,5 +1,4 @@
 <?php
-if( ! defined( 'ABSPATH' ) ) exit;
 /**
  * The Template for displaying all single posts
  *
@@ -8,4 +7,4 @@ if( ! defined( 'ABSPATH' ) ) exit;
  * @subpackage  Timber
  */
 
-Timber::render( array( 'Templates/sidebar.twig' ), $data, TWIG_CACHE_ENABLE );
+Timber::render( array( 'sidebar.twig' ), $data );

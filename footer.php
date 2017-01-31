@@ -1,5 +1,4 @@
 <?php
-if( ! defined( 'ABSPATH' ) ) exit;
 /*
  * Third party plugins that hijack the theme will call wp_footer() to get the footer template.
  * We use this to end our output buffer (started in header.php) and render into the view/page-plugin.twig template.
@@ -10,5 +9,5 @@ if ( ! isset( $timberContext ) ) {
 }
 $timberContext['content'] = ob_get_contents();
 ob_end_clean();
-
-Timber::render( 'Templates/page-plugin.twig' , $timberContext, TWIG_CACHE_ENABLE );
+$templates = array( 'page-plugin.twig' );
+Timber::render( $templates, $timberContext );

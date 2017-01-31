@@ -1,5 +1,4 @@
 <?php
-if( ! defined( 'ABSPATH' ) ) exit;
 /**
  * The template for displaying all pages.
  *
@@ -25,16 +24,4 @@ if( ! defined( 'ABSPATH' ) ) exit;
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
-
-
-$postQuery = array(
-  'post_type' => 'post',
-  'posts_per_page' => 5,
-  'paged' => $paged
-);
-query_posts($postQuery);
-$context['posts'] = Timber::get_posts();
-$context['pagination'] = Timber::get_pagination();
-
-
-Timber::render( array( 'Templates/page-' . $post->post_name . '.twig', 'Templates/page.twig' ), $context, TWIG_CACHE_ENABLE );
+Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context );

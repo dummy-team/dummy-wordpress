@@ -1,5 +1,4 @@
 <?php
-if( ! defined( 'ABSPATH' ) ) exit;
 /**
  * The Template for displaying all single posts
  *
@@ -13,11 +12,10 @@ if( ! defined( 'ABSPATH' ) ) exit;
 $context = Timber::get_context();
 $post = Timber::query_post();
 $context['post'] = $post;
-$context['wp_title'] .= ' - ' . $post->title();
 $context['comment_form'] = TimberHelper::get_comment_form();
 
 if ( post_password_required( $post->ID ) ) {
-	Timber::render( 'Templates/single-password.twig', $context );
+	Timber::render( 'single-password.twig', $context );
 } else {
-	Timber::render( array( 'Templates/single-' . $post->ID . '.twig', 'Templates/single-' . $post->post_type . '.twig', 'Templates/single.twig' ), $context, TWIG_CACHE_ENABLE );
+	Timber::render( array( 'single-' . $post->ID . '.twig', 'single-' . $post->post_type . '.twig', 'single.twig' ), $context );
 }
