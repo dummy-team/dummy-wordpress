@@ -54,7 +54,7 @@ gulp.task('serve', function() {
     gulp.watch("assets/css/src/**/*.scss", ['scss'])
     gulp.watch("assets/js/src/**/*.js", ['js'])
     gulp.watch('assets/img/**/*').on('change', browserSync.reload)
-    gulp.watch('view/**/*.twig').on('change', browserSync.reload)
+    gulp.watch('views/**/*.twig').on('change', browserSync.reload)
     gulp.watch('*.php').on('change', browserSync.reload)
     gulp.watch('./lib/**/*.php').on('change', browserSync.reload)
 })

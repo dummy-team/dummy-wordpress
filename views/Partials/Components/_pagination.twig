@@ -1,0 +1,14 @@
+{% if pagination %}
+  <ul class="pagination horizontal-list row">
+    {% if pagination.next %}
+    <li class="pagination-item pagination-item-left">
+      <a href="{{pagination.next.link}}" class="next icon-gde-fleche-gauche{{pagination.next.link|length ? '' : 'invisible'}}">{{ __('Précédents posts') }}</a>
+    </li>
+    {% endif %}
+    {% if pagination.prev %}
+    <li class="pagination-item pagination-item-right">
+      <a href="{{pagination.prev.link}}" class="prev icon-gde-fleche-droite{{pagination.prev.link|length ? '' : 'invisible'}}">{{ __('Posts suivants') }}</a>
+    </li>
+    {% endif %}
+  </ul>
+{% endif %}

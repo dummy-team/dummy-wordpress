@@ -1,0 +1,10 @@
+{# index.php #}
+
+{% extends 'Layouts/base.twig' %}
+
+{% block content %}
+  {% for post in posts %}
+    {% include ['Partials/Article/List/_'~post.post_type~'.twig', 'Partials/List/_post.twig'] %}
+  {% endfor %}
+  {% include 'Partials/Components/_pagination.twig' %}
+{% endblock %}

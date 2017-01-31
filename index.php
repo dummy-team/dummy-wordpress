@@ -14,8 +14,8 @@
  */
 
 if ( ! class_exists( 'Timber' ) ) {
-	echo 'Timber not activated. Make sure you activate the plugin in <a href="/wp-admin/plugins.php#timber">/wp-admin/plugins.php</a>';
-	return;
+    echo 'Timber not activated. Make sure you activate the plugin in <a href="/wp-admin/plugins.php#timber">/wp-admin/plugins.php</a>';
+    return;
 }
 $context = Timber::get_context();
 
@@ -24,8 +24,8 @@ $context['posts'] = Timber::get_posts();
 
 
 // If we are on the home page, add a few other templates to our hierarchy.
-$templates = array( 'index.twig' );
+$templates = array( 'Templates/index.twig' );
 if ( is_home() ) {
-	array_unshift( $templates, 'front-page.twig', 'home.twig' );
+    array_unshift( $templates, 'Templates/front-page.twig', 'Templates/home.twig' );
 }
 Timber::render( $templates, $context );

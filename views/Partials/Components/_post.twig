@@ -1,0 +1,13 @@
+<div class="post">
+  <h3 class="post-title"><a href="{{post.link}}">{{post.post_title}}</a></h2>
+  <p class="post-meta">
+    {{ post.post_date | date("j M, Y") }} }}
+  </p>
+  {% if post.thumbnail.src %}
+    <img class="post-thumbnail" src="{{post.thumbnail | resize(990, 800)}}" alt="" />
+  {% endif %}
+
+  <div class="post-content">
+    {{post.content}}
+  </div>
+</div>
