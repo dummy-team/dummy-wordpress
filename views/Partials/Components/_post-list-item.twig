@@ -4,7 +4,7 @@
     {{ post.post_date | date("j M, Y") }} }}
   </p>
   {% if post.thumbnail.src %}
-    <img class="post-list-item-thumbnail" src="{{post.thumbnail | resize(400, 300)}}" alt="" />
+    <img class="post-list-item-thumbnail" src="{{post.thumbnail | resize('thumbnail')}}" alt="" />
   {% endif %}
 
   <div class="post-list-item-content">
