@@ -1,7 +1,9 @@
 {# single.php #}
 
-{% extends 'Layouts/blog.twig' %}
+{% extends 'Layouts/base.twig' %}
 
 {% block content %}
-  {% include 'Partials/Article/Single/_post.twig'  %}
+  <article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+    {{post.content}}
+  </article>
 {% endblock %}
