@@ -1,4 +1,17 @@
 .DS_Store
+.db_thumb
+._*
+
 node_modules
 js_composer.zip
 vendor/
+
+*_local.*
+.sass-cache
+npm-debug.log
+
+css/*.css*
+js/*.js*
+
+
+!.gitkeep
