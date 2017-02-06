@@ -1,15 +1,17 @@
 <?php
-// Load Timber from composer
-require_once(__DIR__ . '/vendor/autoload.php');
-$timber = new \Timber\Timber();
 
-// If the Timber plugin isn't activated, print a notice in the admin.
-if (!class_exists('Timber')) {
+if (!file_exists(__DIR__ . '/vendor/autoload.php')) {
     add_action('admin_notices', function() {
-            echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . esc_url(admin_url('plugins.php#timber')) . '">' . esc_url(admin_url('plugins.php')) . '</a></p></div>';
-        });
+        echo '<div class="error"><p>Timber not installed. Make sure you run a composer install in the theme directory</p></div>';
+    });
     return;
 }
+else {
+    require_once(__DIR__ . '/vendor/autoload.php');
+    $timber = new \Timber\Timber();
+}
+
+// Load Timber from composer
 
 
 // Create our version of the TimberSite object
