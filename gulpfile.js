@@ -17,10 +17,12 @@ const es2015 = require('babel-preset-es2015')
 const uglify = require('gulp-uglify')
 const browserSync = require('browser-sync').create()
 
-
 gulp.task('scss', function(){
   return gulp.src('./assets/css/src/**/*.scss')
-    .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+    .pipe(plumber({errorHandler: notify.onError({
+        message: "<%= error.message %>",
+        title: "CSS preprocessing"
+      })}))
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(minifyCSS())
@@ -32,8 +34,15 @@ gulp.task('scss', function(){
 gulp.task('js', () => {
   browserify('./assets/js/src/main.js')
     .transform(babelify.configure({ presets: [es2015] }))
+    .on('error', notify.onError({
+        message: "<%= error.message %>",
+        title: "Babelify JS"
+      }))
     .bundle()
-    .on('error', gutil.log)
+    .on('error', notify.onError({
+        message: "<%= error.message %>",
+        title: "JS compilation"
+      }))
     .pipe(source('main.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
@@ -47,7 +56,7 @@ gulp.task('serve', function() {
 
     browserSync.init({
         server: false,
-        proxy: "localhost:8000",
+        proxy: "localhost:8080",
         open: false,
     })
 
