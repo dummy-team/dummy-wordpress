@@ -10,8 +10,8 @@ vendor/
 .sass-cache
 npm-debug.log
 
-css/*.css*
-js/*.js*
+assets/css/*.css*
+assets/js/*.js*
 
 
 !.gitkeep
