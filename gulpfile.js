@@ -68,7 +68,11 @@ gulp.task('serve', function() {
     gulp.watch('assets/img/**/*', browserSync.reload)
     gulp.watch('views/**/*.twig', browserSync.reload)
     gulp.watch('*.php', browserSync.reload)
-    gulp.watch('./lib/**/*.php', browserSync.reload)
+    gulp.watch('lib/**/*.php', browserSync.reload)
+    gulp.watch('shortcodes/**/*', browserSync.reload)
+    
+ gulp.watch('*.php').on('change', browserSync.reload)
+ gulp.watch('configuration/**/*.php').on('change', browserSync.reload)
 })
 
 gulp.task('default', [ 'build', 'serve' ])
