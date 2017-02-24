@@ -65,10 +65,10 @@ gulp.task('serve', function() {
 
     gulp.watch("assets/css/src/**/*.scss", ['scss'])
     gulp.watch("assets/js/src/**/*.js", ['js'])
-    gulp.watch('assets/img/**/*').on('change', browserSync.reload)
-    gulp.watch('views/**/*.twig').on('change', browserSync.reload)
-    gulp.watch('*.php').on('change', browserSync.reload)
-    gulp.watch('./lib/**/*.php').on('change', browserSync.reload)
+    gulp.watch('assets/img/**/*', browserSync.reload)
+    gulp.watch('views/**/*.twig', browserSync.reload)
+    gulp.watch('*.php', browserSync.reload)
+    gulp.watch('./lib/**/*.php', browserSync.reload)
 })
 
 gulp.task('default', [ 'build', 'serve' ])
