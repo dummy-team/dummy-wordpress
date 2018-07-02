@@ -1,26 +1,20 @@
 const gulp = require('gulp')
-const batch = require('gulp-batch')
-const watch = require('gulp-watch')
 const plumber = require('gulp-plumber')
 const notify = require('gulp-notify')
-const gutil = require('gulp-util')
 const source = require('vinyl-source-stream')
 const buffer = require('vinyl-buffer')
-const pug = require('gulp-pug')
 const sass = require('gulp-sass')
-const postcss = require('gulp-postcss');
-const autoprefixer = require('autoprefixer');
+const postcss = require('gulp-postcss')
+const autoprefixer = require('autoprefixer')
 const minifyCSS = require('gulp-csso')
 const sourcemaps = require('gulp-sourcemaps')
-const babel = require('gulp-babel')
 const browserify = require('browserify')
 const babelify = require('babelify')
-const es2015 = require('babel-preset-es2015')
-const uglify = require('gulp-uglify')
 const browserSync = require('browser-sync').create()
+const uglify = require('gulp-uglify')
 
-gulp.task('scss', function(){
-  return gulp.src('./assets/css/src/**/*.scss')
+gulp.task('sass', function(){
+  return gulp.src('./assets/css/src/**/*.sass')
     .pipe(plumber({errorHandler: notify.onError({
         message: "<%= error.message %>",
         title: "CSS preprocessing"
@@ -31,26 +25,26 @@ gulp.task('scss', function(){
     .pipe(minifyCSS())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('assets/css'))
-    .pipe(browserSync.stream())
+    .pipe(browserSync.stream({match: '**/*.css'}))
 })
 
 gulp.task('js', () => {
-  browserify('./assets/js/src/main.js')
-    .transform(babelify.configure({ presets: [es2015] }))
-    .on('error', notify.onError({
-        message: "<%= error.message %>",
-        title: "Babelify JS"
-      }))
-    .bundle()
-    .on('error', notify.onError({
-        message: "<%= error.message %>",
-        title: "JS compilation"
-      }))
-    .pipe(source('main.js'))
-    .pipe(buffer())
-    .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(uglify())
-    .pipe(sourcemaps.write('.'))
+  return browserify('./assets/js/src/main.js',  {debug: true})
+  .transform(babelify.configure({ presets: ["@babel/preset-env"], sourceMaps: true }))
+  .on('error', notify.onError({
+      message: "<%= error.message %>",
+      title: "Babelify JS"
+    }))
+  .bundle()
+  .on('error', notify.onError({
+      message: "<%= error.message %>",
+      title: "JS compilation"
+    }))
+  .pipe(source('main.js'))
+  .pipe(buffer())
+  // .pipe(sourcemaps.init({loadMaps: true}))
+  // .pipe(uglify())
+  // .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('assets/js'))
     .pipe(browserSync.stream())
 })
@@ -63,17 +57,14 @@ gulp.task('serve', function() {
         open: false,
     })
 
-    gulp.watch("assets/css/src/**/*.scss", ['scss'])
-    gulp.watch("assets/js/src/**/*.js", ['js'])
-    gulp.watch('assets/img/**/*', browserSync.reload)
-    gulp.watch('views/**/*.twig', browserSync.reload)
-    gulp.watch('*.php', browserSync.reload)
-    gulp.watch('lib/**/*.php', browserSync.reload)
-    gulp.watch('shortcodes/**/*', browserSync.reload)
-    
- gulp.watch('*.php').on('change', browserSync.reload)
- gulp.watch('configuration/**/*.php').on('change', browserSync.reload)
+    gulp.watch('assets/css/src/**/*.s?ss').on('all', gulp.parallel('sass'))
+    gulp.watch('assets/js/src/**/*.js').on('all', gulp.parallel('js'))
+    gulp.watch([
+      'assets/img/**/*',
+      './**/*.twig',
+      './**/*.php'
+    ]).on('all', browserSync.reload)
 })
 
-gulp.task('default', [ 'build', 'serve' ])
-gulp.task('build', [ 'scss', 'js' ])
+gulp.task('build', gulp.parallel('sass', 'js'))
+gulp.task('default', gulp.parallel('build', 'serve'))
