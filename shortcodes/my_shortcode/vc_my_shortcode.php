@@ -4,7 +4,7 @@ vc_map( array(
   'base' => 'my_shortcode',
   'icon' => 'thb_vc_ico_post',
   'class' => 'thb_vc_sc_post',
-  'category' => 'Inouit',
+  'category' => 'Skin',
   'params'    => array(
     array(
       'type' => 'textfield',
