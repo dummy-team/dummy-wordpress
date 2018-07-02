@@ -23,7 +23,7 @@ class StarterSite extends TimberSite {
         add_theme_support('menus');
 
         add_filter('timber_context', array($this, 'add_to_context'));
-        add_filter('get_twig', array($this, 'add_to_twig'));
+        // add_filter('get_twig', array($this, 'add_to_twig'));
         add_filter('wp_mail_from', 'noreply@domain.com');
         add_filter('wp_mail_from_name', 'Administrateur');
 
@@ -125,8 +125,8 @@ class StarterSite extends TimberSite {
     // Here you can add your own fuctions to Twig. Don't worry about this section if you don't come across a need for it.
     // See more here: http://twig.sensiolabs.org/doc/advanced.html
     function add_to_twig($twig) {
-        $twig->addExtension(new Twig_Extension_StringLoader());
-        $twig->addFilter('myfoo', new Twig_Filter_Function('myfoo'));
+        // $twig->addExtension(new Twig_Extension_StringLoader());
+		// $twig->addFilter('myfoo', new Twig_SimpleFilter('myfoo', array($this, 'myfoo')));
         return $twig;
     }
 
