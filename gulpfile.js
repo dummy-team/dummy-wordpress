@@ -21,7 +21,7 @@ gulp.task('sass', function(){
       })}))
     .pipe(sourcemaps.init())
     .pipe(sass())
-    .pipe(postcss([autoprefixer({browsers: ['last 3 version']})]))
+    .pipe(postcss([autoprefixer()]))
     .pipe(minifyCSS())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('assets/css'))

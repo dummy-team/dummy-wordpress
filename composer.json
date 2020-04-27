@@ -1,5 +1,7 @@
 {
+    "name": "dummy/skin",
+    "description": "Wordpress dummy theme",
     "require": {
-        "timber/timber": "^1.7"
+        "timber/timber": "^1.15"
     }
 }
